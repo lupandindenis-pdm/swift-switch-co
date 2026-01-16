@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,6 +36,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="ghost" size="sm">
               Войти
             </Button>
