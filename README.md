@@ -36,6 +36,42 @@ npm i
 npm run dev
 ```
 
+## Как открыть проект у себя на ПК (Windows)
+
+1. Установи Node.js (LTS) с официального сайта.
+2. Открой PowerShell в папке проекта.
+3. Установи зависимости:
+
+```powershell
+npm install
+```
+
+4. Запусти сайт в режиме разработки:
+
+```powershell
+npm run dev
+```
+
+5. Открой в браузере адрес из консоли (обычно `http://localhost:5173/`).
+
+### Собрать “как готовый сайт”
+
+Vite-сборку нельзя просто открыть двойным кликом по HTML — нужно отдать файлы через локальный сервер.
+
+1. Собери проект:
+
+```powershell
+npm run build
+```
+
+2. Запусти предпросмотр сборки:
+
+```powershell
+npm run preview
+```
+
+3. Открой адрес из консоли (обычно `http://localhost:4173/`).
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).

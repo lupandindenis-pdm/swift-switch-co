@@ -1,48 +1,51 @@
 import { Zap, Shield, Clock, Wallet, Globe, Headphones } from "lucide-react";
-
-const features = [
-  {
-    icon: Zap,
-    title: "Мгновенные транзакции",
-    description: "Обмен происходит за считанные минуты благодаря оптимизированной инфраструктуре.",
-  },
-  {
-    icon: Shield,
-    title: "Максимальная безопасность",
-    description: "Многоуровневая защита данных и средств с использованием современных технологий.",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Доступность",
-    description: "Платформа работает круглосуточно, обменивайте криптовалюту в любое время.",
-  },
-  {
-    icon: Wallet,
-    title: "300+ Криптовалют",
-    description: "Поддержка всех популярных монет и токенов для обмена.",
-  },
-  {
-    icon: Globe,
-    title: "Глобальный охват",
-    description: "Работаем по всему миру без ограничений и блокировок.",
-  },
-  {
-    icon: Headphones,
-    title: "Поддержка 24/7",
-    description: "Команда профессионалов готова помочь в любой момент.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Features = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Zap,
+      title: t('features.items.speed.title'),
+      description: t('features.items.speed.desc'),
+    },
+    {
+      icon: Shield,
+      title: t('features.items.security.title'),
+      description: t('features.items.security.desc'),
+    },
+    {
+      icon: Clock,
+      title: t('features.items.availability.title'),
+      description: t('features.items.availability.desc'),
+    },
+    {
+      icon: Wallet,
+      title: t('features.items.coins.title'),
+      description: t('features.items.coins.desc'),
+    },
+    {
+      icon: Globe,
+      title: t('features.items.global.title'),
+      description: t('features.items.global.desc'),
+    },
+    {
+      icon: Headphones,
+      title: t('features.items.support.title'),
+      description: t('features.items.support.desc'),
+    },
+  ];
+
   return (
     <section id="features" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Почему выбирают <span className="gradient-text">CryptoSwap</span>
+            {t('features.title')} <span className="gradient-text">{t('features.brand')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Мы создали идеальную платформу для обмена криптовалют, объединив скорость, безопасность и удобство.
+            {t('features.subtitle')}
           </p>
         </div>
         

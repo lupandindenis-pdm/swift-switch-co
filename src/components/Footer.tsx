@@ -1,7 +1,10 @@
 import { ArrowRight, Mail, MessageCircle, Twitter, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-card border-t border-border">
       {/* CTA Section */}
@@ -10,13 +13,13 @@ const Footer = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
           <div className="relative">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Готовы начать обмен?
+              {t('footer.cta.title')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Присоединяйтесь к тысячам пользователей, которые уже обменивают криптовалюту быстро и безопасно.
+              {t('footer.cta.desc')}
             </p>
             <Button variant="gradient" size="xl">
-              Начать прямо сейчас
+              {t('footer.cta.button')}
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
@@ -35,7 +38,7 @@ const Footer = () => {
               <span className="font-display font-bold text-xl">CryptoSwap</span>
             </div>
             <p className="text-muted-foreground mb-4">
-              Надёжный сервис для быстрого и безопасного обмена криптовалют.
+              {t('footer.brand_desc')}
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
@@ -52,31 +55,31 @@ const Footer = () => {
           
           {/* Links */}
           <div>
-            <h4 className="font-semibold mb-4">Продукт</h4>
+            <h4 className="font-semibold mb-4">{t('footer.product.title')}</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Обмен</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Курсы</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">API</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Мобильное приложение</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.product.exchange')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.product.rates')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.product.api')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.product.mobile')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Компания</h4>
+            <h4 className="font-semibold mb-4">{t('footer.company.title')}</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">О нас</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Блог</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Карьера</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Контакты</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.company.about')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.company.blog')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.company.careers')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.company.contacts')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Поддержка</h4>
+            <h4 className="font-semibold mb-4">{t('footer.support.title')}</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Служба поддержки</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Статус системы</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.support.faq')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.support.service')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{t('footer.support.status')}</a></li>
               <li>
                 <a href="#" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="w-4 h-4" />
@@ -92,17 +95,17 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6 border-t border-border">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 CryptoSwap. Все права защищены.
+            {t('footer.rights')}
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Политика конфиденциальности
+              {t('footer.privacy')}
             </a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Условия использования
+              {t('footer.terms')}
             </a>
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              AML политика
+              {t('footer.aml')}
             </a>
           </div>
         </div>
